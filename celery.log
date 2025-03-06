@@ -1,0 +1,261 @@
+2024-06-24 22:18:43,169 - kombu.connection - WARNING - No hostname was supplied. Reverting to default 'localhost'
+2024-06-24 22:18:43,197 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 22:18:45,241 - celery.worker.consumer.consumer - ERROR - consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 10061] [WinError 10061] 由于目标计算机积极拒绝，无法连接。.
+Trying again in 2.00 seconds... (1/100)
+
+2024-06-24 22:18:49,270 - celery.worker.consumer.consumer - ERROR - consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 10061] [WinError 10061] 由于目标计算机积极拒绝，无法连接。.
+Trying again in 4.00 seconds... (2/100)
+
+2024-06-24 22:18:55,310 - celery.worker.consumer.consumer - ERROR - consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 10061] [WinError 10061] 由于目标计算机积极拒绝，无法连接。.
+Trying again in 6.00 seconds... (3/100)
+
+2024-06-24 22:19:03,336 - celery.worker.consumer.consumer - ERROR - consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 10061] [WinError 10061] 由于目标计算机积极拒绝，无法连接。.
+Trying again in 8.00 seconds... (4/100)
+
+2024-06-24 23:16:08,372 - celery.worker - CRITICAL - Unrecoverable error: ValueError("Port could not be cast to integer value as 'port'")
+Traceback (most recent call last):
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\bootsteps.py", line 112, in start
+    self.on_start()
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 135, in on_start
+    self.emit_banner()
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 169, in emit_banner
+    ' \n', self.startup_info(artlines=not use_image))),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 231, in startup_info
+    results=self.app.backend.as_uri(),
+            ^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\app\base.py", line 1303, in backend
+    self._backend = self._get_backend()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\app\base.py", line 971, in _get_backend
+    return backend(app=self, url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\backends\redis.py", line 272, in __init__
+    self.connparams = self._params_from_url(url, self.connparams)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\backends\redis.py", line 308, in _params_from_url
+    scheme, host, port, username, password, path, query = _parse_url(url)
+                                                          ^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\kombu\utils\url.py", line 70, in url_to_parts
+    parts.port,
+    ^^^^^^^^^^
+  File "D:\python\python3.12.3\Lib\urllib\parse.py", line 182, in port
+    raise ValueError(f"Port could not be cast to integer value as {port!r}")
+ValueError: Port could not be cast to integer value as 'port'
+2024-06-24 23:16:53,618 - celery.worker - CRITICAL - Unrecoverable error: ValueError("Port could not be cast to integer value as 'port'")
+Traceback (most recent call last):
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\bootsteps.py", line 112, in start
+    self.on_start()
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 135, in on_start
+    self.emit_banner()
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 169, in emit_banner
+    ' \n', self.startup_info(artlines=not use_image))),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\apps\worker.py", line 231, in startup_info
+    results=self.app.backend.as_uri(),
+            ^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\app\base.py", line 1303, in backend
+    self._backend = self._get_backend()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\app\base.py", line 971, in _get_backend
+    return backend(app=self, url=url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\backends\redis.py", line 272, in __init__
+    self.connparams = self._params_from_url(url, self.connparams)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\backends\redis.py", line 308, in _params_from_url
+    scheme, host, port, username, password, path, query = _parse_url(url)
+                                                          ^^^^^^^^^^^^^^^
+  File "D:\pycharmproject\oaback\.venv\Lib\site-packages\kombu\utils\url.py", line 70, in url_to_parts
+    parts.port,
+    ^^^^^^^^^^
+  File "D:\python\python3.12.3\Lib\urllib\parse.py", line 182, in port
+    raise ValueError(f"Port could not be cast to integer value as {port!r}")
+ValueError: Port could not be cast to integer value as 'port'
+2024-06-24 23:17:40,189 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:17:40,198 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-24 23:17:40,198 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:17:40,203 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-24 23:17:41,215 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-24 23:17:41,222 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-24 23:17:41,222 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:17:41,222 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-24 23:57:18,629 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:57:18,636 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-24 23:57:18,636 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:57:18,639 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-24 23:57:19,648 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-24 23:57:19,652 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-24 23:57:19,654 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-24 23:57:19,659 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-25 00:10:02,838 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:10:02,844 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-25 00:10:02,844 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:10:02,846 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-25 00:10:03,863 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-25 00:10:03,868 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:10:03,871 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-25 00:10:03,875 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-25 00:35:49,916 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:35:49,924 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-25 00:35:49,925 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:35:49,927 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-25 00:35:50,949 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-25 00:35:50,958 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-25 00:35:50,959 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 00:35:50,961 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-25 00:55:47,513 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\concurrency\gevent.py:48: UserWarning: libuv only supports millisecond timer resolution; all times less will be set to 1 ms
+  g = self._Greenlet.spawn_later(secs, entry)
+
+2024-06-25 01:37:33,423 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 01:37:33,431 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-25 01:37:33,431 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 01:37:33,433 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-25 01:37:34,446 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-25 01:37:34,450 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-25 01:37:34,454 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-25 01:37:34,458 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-25 01:39:42,304 - celery.worker.strategy - INFO - Task send_mail_task[1160eec6-7c6e-4bc6-b565-907a4a499d92] received
+2024-06-25 01:39:55,699 - celery.app.trace - INFO - Task send_mail_task[1160eec6-7c6e-4bc6-b565-907a4a499d92] succeeded in 13.391000000000531s: None
+2024-06-25 02:02:18,852 - celery.worker.strategy - INFO - Task send_mail_task[8107b6d2-728a-4107-8f69-88e306a5a111] received
+2024-06-25 02:02:31,397 - celery.app.trace - INFO - Task send_mail_task[8107b6d2-728a-4107-8f69-88e306a5a111] succeeded in 12.54699999999957s: None
+2024-06-26 17:49:14,396 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-26 17:49:14,407 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-26 17:49:14,408 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-26 17:49:14,409 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-26 17:49:15,423 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-26 17:49:15,430 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-26 17:49:15,433 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-26 17:49:15,434 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2024-06-26 17:57:03,405 - celery.worker.strategy - INFO - Task send_mail_task[d9546c36-21d1-479a-b2bd-68a281ec685d] received
+2024-06-26 17:57:05,871 - celery.app.trace - INFO - Task send_mail_task[d9546c36-21d1-479a-b2bd-68a281ec685d] succeeded in 2.4689999999991414s: None
+2024-06-26 17:59:56,470 - celery.worker.strategy - INFO - Task send_mail_task[e24c98fd-3ed2-4cc1-811d-95c66fff0c4c] received
+2024-06-26 17:59:57,945 - celery.app.trace - INFO - Task send_mail_task[e24c98fd-3ed2-4cc1-811d-95c66fff0c4c] succeeded in 1.4689999999991414s: None
+2024-06-27 21:48:36,354 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-27 21:48:36,365 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2024-06-27 21:48:36,365 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-27 21:48:36,367 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2024-06-27 21:48:37,394 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2024-06-27 21:48:37,400 - py.warnings - WARNING - D:\pycharmproject\oaback\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+2024-06-27 21:48:37,402 - celery.apps.worker - INFO - celery@TsayDust ready.
+2024-06-27 21:48:37,403 - celery.worker.pidbox - INFO - pidbox: Connected to redis://127.0.0.1:6379/1.
+2025-03-05 17:08:08,022 - celery.worker.consumer.connection - INFO - Connected to redis://127.0.0.1:6379/1
+2025-03-05 17:08:08,023 - celery.worker.consumer.mingle - INFO - mingle: searching for neighbors
+2025-03-05 17:08:09,032 - celery.worker.consumer.mingle - INFO - mingle: all alone
+2025-03-05 17:08:09,050 - celery.apps.worker - INFO - celery@TsayDusts-MacBook-Air.local ready.
+2025-03-06 05:50:45,603 - celery.worker.strategy - INFO - Task send_mail_task[036d767c-4d6b-4277-a674-037477c4aebc] received
+2025-03-06 05:50:47,486 - celery.app.trace - INFO - Task send_mail_task[036d767c-4d6b-4277-a674-037477c4aebc] succeeded in 1.8809478329494596s: None
