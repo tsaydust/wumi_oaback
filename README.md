@@ -25,8 +25,10 @@ wumiOA 人事管理系统是一款基于 Vue3 和 Django 开发的高效人事�
 #### 服务器部署流程
 1.  克隆该项目
 ```git clone https://github.com/tsaydust/wumi_oaback.git```
-和wumi_oafront,放在同一个文件夹www下
+和wumi_oafront,
 ```git clone https://github.com/tsaydust/wumi_oafront.git```
+放在同一个文件夹www下
+
 2.  在www目录创建volumes文件夹负责容器数据持久化
 ```mkdir volumes```
 3.  创建compose.yml
