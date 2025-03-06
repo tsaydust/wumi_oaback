@@ -14,9 +14,14 @@ RUN mkdir -p /data/sock
 
 EXPOSE 8000
 
-ENTRYPOINT python manage.py migrate; \
-python manage.py initdepartments; \
-python manage.py inituser; \
-python manage.py initabsenttype; \
-celery -A oaback worker -l INFO --detach; \
-uwsgi --ini uwsgi.ini
+# 在 Dockerfile 中添加初始化逻辑
+ENTRYPOINT ["/bin/sh", "-c", \
+  "if [ ! -f /data/initialized ]; then \
+    python manage.py migrate && \
+    python manage.py initdepartments && \
+    python manage.py inituser && \
+    python manage.py initabsenttype && \
+    touch /data/initialized; \
+  fi && \
+  celery -A oaback worker -l INFO --detach && \
+  uwsgi --ini uwsgi.ini"]
