@@ -5,9 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>知了课堂-账号激活</title>
-    <link href="{% static 'bootstrap5/bootstrap.min.css' %}" rel="stylesheet">
-    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>
+    <title>WUMIOA账号激活</title>
+    <link href='www/staticbootstrap5/bootstrap.min.css'rel="stylesheet">
+{#    <link href="{% static 'bootstrap5/bootstrap.min.css' %}" rel="stylesheet">#}
+    <script src="www/static/jquery/jquery-3.7.1.min.js"></script>
+{#    <script src="{% static 'jquery/jquery-3.7.1.min.js' %}"></script>#}
     <style>
         html,
         body {
@@ -40,7 +42,7 @@
 <body class="mt-5 bg-body-tertiary">
     <main class="form-signin w-100 m-auto">
         <form method="POST">
-            <h1 class="h3 mb-3 fw-normal">知了课堂-员工激活</h1>
+            <h1 class="h3 mb-3 fw-normal">WUMI员工激活</h1>
             <div class="form-floating">
                 <input name="email" type="email" class="form-control" id="emailInput" placeholder="请输入邮箱">
                 <label for="emailInput">邮箱</label>
@@ -67,7 +69,7 @@
                 alert("请输入最少6位的密码！")
                 return;
             }
-            $.post("/staff/active", {email, password}, function (result){
+            $.post("/api/staff/active", {email, password}, function (result){
                 if(result.code == 200){
                     alert("激活成功！")
                     window.location = "/"
