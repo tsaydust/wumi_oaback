@@ -23,5 +23,6 @@ ENTRYPOINT ["/bin/sh", "-c", \
     python manage.py initabsenttype && \
     touch /data/initialized; \
   fi && \
+  python manage.py collectstatic && \
   celery -A oaback worker -l INFO --detach && \
   uwsgi --ini uwsgi.ini"]
