@@ -12,6 +12,8 @@ RUN pip install uwsgi==2.0.25.1 -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN mkdir -p /data/log
 RUN mkdir -p /data/sock
 
+RUN python manage.py collectstatic --noinput
+
 EXPOSE 8000
 
 # 在 Dockerfile 中添加初始化逻辑
@@ -23,6 +25,5 @@ ENTRYPOINT ["/bin/sh", "-c", \
     python manage.py initabsenttype && \
     touch /data/initialized; \
   fi && \
-  python manage.py collectstatic && \
   celery -A oaback worker -l INFO --detach && \
   uwsgi --ini uwsgi.ini"]
