@@ -46,7 +46,7 @@ def send_active_email(request, email):
     # 针对邮箱要进行加密：AES
     # http://localhost:8000/staff/active?token=4dFLaXTbbzciZKGm0LIafmhOuuW11S+7kEtqdUSeFf4=
     message = f"请点击以下链接激活账号：{active_url}"
-    subject = f'【知了课堂】账号激活',
+    subject = f'账号激活',
     # send_mail(subject, recipient_list=[email], message=message, from_email=settings.DEFAULT_FROM_EMAIL)
     send_mail_task.delay(email, subject, message)
 
